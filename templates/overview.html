@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Model Overview - Farmer Credit Assessment</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/userDashboard.css') }}">
+</head>
+<body>
+  <main style="max-width: 980px; margin: 48px auto; padding: 0 24px;">
+    <h1>Farmer Credit Model Overview</h1>
+    <p>This system combines agricultural production, climate volatility, soil indicators, fertilizer usage, and market-price signals to estimate farmer credit-risk levels.</p>
+    <section>
+      <h2>Risk Levels</h2>
+      <ol>
+        <li>Very Low Risk</li>
+        <li>Low Risk</li>
+        <li>Medium Risk</li>
+        <li>High Risk</li>
+        <li>Very High Risk</li>
+      </ol>
+    </section>
+    <p><a href="{{ url_for('dashboard') }}">Back to dashboard</a></p>
+  </main>
+</body>
+</html>

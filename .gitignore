@@ -1,0 +1,32 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.Python
+.venv/
+venv/
+env/
+pip-wheel-metadata/
+
+# Environment and secrets
+.env
+.env.*
+!.env.sample
+
+# Local runtime output
+runs/
+logs/
+reports/
+*.log
+
+# Large raw datasets are documented but not committed
+Dataset/
+
+# Keep the production model pointer, ignore older generated model runs
+Trained_models/model_*/
+
+# OS/editor files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

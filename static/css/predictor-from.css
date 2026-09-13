@@ -1,0 +1,307 @@
+/* predictor-form.css (enhanced "sexy" version) */
+
+/* —— Form Container —— */
+.predictor-form {
+  position: relative;
+  z-index: 200;
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: linear-gradient(135deg, #c2c2c2, #d0d0d0);
+  border-radius: 1rem;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
+  border-top: 6px solid #003366;
+  backdrop-filter: blur(4px);
+  margin-left: auto;
+  margin-right: auto;
+  transform: translateX(150px); /* Adjust for sidebar */
+}
+
+/* —— Main Heading —— */
+.main-heading {
+  display: block;
+  color: #181818;
+  font-size: 3rem;
+  text-transform: uppercase;
+  text-align: center;
+  margin-top: 80px;     /* added space above heading */
+  margin-bottom: 60px;
+  margin-left: 300px; /* Adjust for sidebar */
+  letter-spacing: 3px;
+  position: relative;
+  z-index: 200;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+.main-heading::after {
+  content: '';
+  width: 100px;
+  height: 4px;
+  background: linear-gradient(135deg, #2575fc, #6a11cb);
+  position: absolute;
+  bottom: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 2px;
+}
+
+/* —— Instruction Text —— */
+.instructions {
+  text-align: center;
+  font-size: 1.1rem;
+  color: #333;
+  margin-bottom: 1.5rem;
+  z-index: 200;
+  font-style: italic;
+}
+
+/* —— Sub-heading (h2) —— */
+.predictor-form h2 {
+  font-size: 2.6rem;
+  text-align: center;
+  color: #003366;
+  letter-spacing: 1.5px;
+  margin-bottom: 30px;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* —— Grid of Form Fields —— */
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+/* —— Result Card Styling —— */
+.result-card {
+  display: none;
+  background: #ffffff;
+  border: 2px solid #2575fc;
+  border-radius: 1rem;
+  padding: 2rem;
+  margin: 2rem auto;
+  max-width: 500px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(37, 117, 252, 0.15);
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.5s ease;
+}
+
+.result-card h4 {
+  color: #2575fc;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.result-card p {
+  color: #666;
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+}
+
+.result-card .badge {
+  font-size: 1.2rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 2rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Badge color classes */
+.bg-danger { background-color: #dc3545 !important; color: white !important; }
+.bg-warning { background-color: #ffc107 !important; color: #212529 !important; }
+.bg-info { background-color: #17a2b8 !important; color: white !important; }
+.bg-success { background-color: #28a745 !important; color: white !important; }
+.bg-primary { background-color: #007bff !important; color: white !important; }
+
+/* —— Form Group Styling —— */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  background: #ffffff;
+  border: 1px solid rgba(0, 54, 102, 0.15);
+  border-left: 6px solid transparent;
+  border-radius: 0.75rem;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-left 0.2s ease;
+}
+
+.form-group:nth-child(odd) {
+  background: #fbfcfd;
+}
+
+.form-group:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.1);
+  border-left-color: #2575fc;
+}
+
+.form-group label {
+  font-size: 1rem;
+  color: #222;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+}
+
+.form-group input {
+  padding: 0.75rem;
+  border: 2px solid #c3cfe2;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  background: #fff;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: #2575fc;
+  box-shadow: 0 0 0 3px rgba(37, 117, 252, 0.1);
+}
+
+.form-group input:invalid {
+  border-color: #ff4d4d;
+}
+
+/* Add range indicator styling */
+.form-group input[type="number"]::-webkit-inner-spin-button,
+.form-group input[type="number"]::-webkit-outer-spin-button {
+  opacity: 1;
+}
+
+/* —— Predict Button —— */
+.form-actions {
+  grid-column: 1 / -1;
+  text-align: center;
+  margin-top: 2rem;
+}
+.btn-predict {
+  display: inline-block;
+  padding: 0.8rem 2.5rem;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #fff;
+  background: linear-gradient(135deg, #2575fc, #6a11cb);
+  border: none;
+  border-radius: 2rem;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  position: relative;
+  z-index: 200;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.btn-predict:hover {
+  transform: scale(1.05) rotate(-1deg);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+}
+
+/* —— Risk Badges —— */
+.badge {
+  display: inline-block;
+  padding: 0.5em 1em;
+  border-radius: 2rem;
+  font-weight: 700;
+  margin-top: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.bg-danger  { background-color: #ff4d4d; color: #000; box-shadow: 0 4px 12px rgba(255, 75, 75, 0.4); }
+.bg-warning { background-color: #f7bd03; color: #000; box-shadow: 0 4px 12px rgba(247, 189, 3, 0.4); }
+.bg-info    { background-color: #17a2b8; color: #fff; box-shadow: 0 4px 12px rgba(23, 162, 184, 0.4); }
+.bg-success { background-color: #4caf50; color: #fff; box-shadow: 0 4px 12px rgba(76, 175, 80, 0.4); }
+.bg-primary { background-color: #007bff; color: #fff; box-shadow: 0 4px 12px rgba(0, 123, 255, 0.4); }
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+  .predictor-form {
+    transform: translateX(100px);
+  }
+  .main-heading {
+    margin-left: 100px;
+  }
+}
+
+@media (max-width: 768px) {
+  .predictor-form {
+    transform: translateX(0);
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+  .main-heading {
+    margin-left: 0;
+    font-size: 2rem;
+  }
+  .features-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Risk Analysis and Suggestions Styling */
+.risk-analysis {
+  margin-top: 20px;
+  text-align: left;
+  border-top: 2px solid #e9ecef;
+  padding-top: 20px;
+}
+
+.risk-analysis h5 {
+  color: #2c3e50;
+  margin-bottom: 15px;
+  text-align: center;
+  font-size: 1.2em;
+}
+
+.risk-explanation {
+  background: #f8f9fa;
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  border-left: 4px solid #007bff;
+}
+
+.risk-explanation p {
+  margin: 0;
+  color: #495057;
+  line-height: 1.6;
+}
+
+.suggestions, .next-steps {
+  margin-bottom: 20px;
+}
+
+.suggestions h6, .next-steps h6 {
+  color: #28a745;
+  margin-bottom: 10px;
+  font-size: 1.1em;
+}
+
+.suggestions ul, .next-steps ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.suggestions li, .next-steps li {
+  background: #e8f5e8;
+  margin: 8px 0;
+  padding: 10px 15px;
+  border-radius: 6px;
+  border-left: 4px solid #28a745;
+  color: #155724;
+}
+
+.next-steps li {
+  background: #e3f2fd;
+  border-left-color: #2196f3;
+  color: #0d47a1;
+}
+
+
+
+
+
+

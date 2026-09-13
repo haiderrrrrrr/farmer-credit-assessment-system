@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Result Details - Farmer Credit Assessment</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/userDashboard.css') }}">
+</head>
+<body>
+  <main style="max-width: 980px; margin: 48px auto; padding: 0 24px;">
+    <h1>Assessment Result Details</h1>
+    <p>Each prediction includes a model risk level, confidence score, model version, and the submitted agricultural inputs stored for audit history.</p>
+    <p>Open a saved assessment from history to retrieve expert recommendations and feature-level sensitivity data.</p>
+    <p><a href="{{ url_for('assessment_history') }}">View assessment history</a></p>
+  </main>
+</body>
+</html>

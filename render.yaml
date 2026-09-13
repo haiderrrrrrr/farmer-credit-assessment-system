@@ -1,0 +1,36 @@
+services:
+  - type: web
+    name: farmer-credit-assessment-system
+    runtime: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.9
+      - key: SECRET_KEY
+        generateValue: true
+      - key: PG_HOST
+        fromDatabase:
+          name: farmer-credit-db
+          property: host
+      - key: PG_PORT
+        fromDatabase:
+          name: farmer-credit-db
+          property: port
+      - key: PG_USER
+        fromDatabase:
+          name: farmer-credit-db
+          property: user
+      - key: PG_PASS
+        fromDatabase:
+          name: farmer-credit-db
+          property: password
+      - key: PG_DB
+        fromDatabase:
+          name: farmer-credit-db
+          property: database
+
+databases:
+  - name: farmer-credit-db
+    plan: free

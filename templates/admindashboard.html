@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard - Farmer Credit Assessment</title>
+  <link rel="icon" href="{{ url_for('static', filename='images/icon.png') }}" type="image/png">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/userDashboard.css') }}">
+  <style>
+    .admin-shell { max-width: 1120px; margin: 48px auto; padding: 0 24px; }
+    .admin-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 18px; margin-top: 28px; }
+    .admin-card { background: #fff; border: 1px solid #e6ece7; border-radius: 8px; padding: 22px; box-shadow: 0 12px 30px rgba(31, 74, 45, .08); }
+    .admin-card h2 { margin: 0 0 10px; color: #234c2f; font-size: 20px; }
+    .admin-card p { color: #50645a; min-height: 48px; }
+    .admin-card a { color: #fff; background: #2f6f44; text-decoration: none; padding: 10px 14px; border-radius: 6px; display: inline-block; }
+  </style>
+</head>
+<body>
+  <main class="admin-shell">
+    <h1>Farmer Credit Admin Dashboard</h1>
+    <p>Monitor model activity, review assessment history, and manage model retraining from one place.</p>
+    <section class="admin-grid">
+      <article class="admin-card">
+        <h2>Assessment History</h2>
+        <p>Review credit-risk predictions submitted by all users.</p>
+        <a href="{{ url_for('admin_assessment_history') }}">Open History</a>
+      </article>
+      <article class="admin-card">
+        <h2>Train Model</h2>
+        <p>Run the training pipeline and view the generated training report.</p>
+        <a href="{{ url_for('train_model_page') }}">Train Model</a>
+      </article>
+      <article class="admin-card">
+        <h2>Dashboard</h2>
+        <p>Return to the main dashboard experience.</p>
+        <a href="{{ url_for('dashboard') }}">Open Dashboard</a>
+      </article>
+      <article class="admin-card">
+        <h2>Logout</h2>
+        <p>End the current admin session securely.</p>
+        <a href="{{ url_for('auth.logout') }}">Logout</a>
+      </article>
+    </section>
+  </main>
+</body>
+</html>
